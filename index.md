@@ -31,7 +31,6 @@ double quotation marks around the value, unless specified otherwise.
 And run 'make workshop-check' *before* committing to make sure that changes are good.
 {% endcomment %}
 
-
 {% comment %}
 8< ============= For a workshop delete from here =============
 For a workshop please delete the following block until the next dashed-line
@@ -79,11 +78,10 @@ It looks like you are setting up a website for a workshop but you haven't specif
 Read correct lesson meta from esciencecenter-digital-skills/workshop-metadata
 {% endcomment %}
 
-
 {% if info.flavor and info.flavor != 'NA' %}
-{% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}-{{info.flavor}}{% endcapture %}
+{% capture lesson_meta %}<https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}-{{info.flavor}}{%> endcapture %}
 {% else %}
-{% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{% endcapture %}
+{% capture lesson_meta %}<https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{%> endcapture %}
 {% endif %}
 
 {% comment %}
@@ -109,7 +107,6 @@ displayed if the 'eventbrite' field in the header is not set.
   scrolling="auto">
 </iframe>
 {% endif %}
-
 
 <h2 id="general">General Information</h2>
 
@@ -154,7 +151,7 @@ LOCATION
 
 This block displays the address and links to maps showing directions
 if the latitude and longitude of the workshop have been set.  You
-can use https://itouchmap.com/latlong.html to find the lat/long of an
+can use <https://itouchmap.com/latlong.html> to find the lat/long of an
 address.
 {% endcomment %}
 {% assign begin_address = info.address | slice: 0, 4 | downcase  %}
@@ -292,9 +289,10 @@ Move the 'endcomment' tag above the beginning of the following
 <p> tag to make this section visible.
 
 Edit the text to match who can attend the workshop. For instance:
+
 - This workshop is open to affiliates to ABC university.
 - This workshop is open to the public.
-- If you are interested in attending this workshop, contact me@example.com
+- If you are interested in attending this workshop, contact <me@example.com>
   for more information
 
 <p id="who-can-attend">
@@ -334,19 +332,18 @@ Everyone who participates in Carpentries activities is required to conform to th
 <hr/>
 {% endif %}
 
-
 {% comment %}
 Collaborative Notes
 
 If you want to use an Etherpad, go to
 
-https://pad.carpentries.org/YYYY-MM-DD-site
+<https://pad.carpentries.org/YYYY-MM-DD-site>
 
 where 'YYYY-MM-DD-site' is the identifier for your workshop,
 e.g., '2015-06-10-esu'.
 
 Note we also have a CodiMD (the open-source version of HackMD)
-available at https://codimd.carpentries.org
+available at <https://codimd.carpentries.org>
 {% endcomment %}
 {% if page.collaborative_notes %}
 <h2 id="collaborative_notes">Collaborative Notes</h2>
@@ -356,7 +353,6 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 </p>
 <hr/>
 {% endif %}
-
 
 {% comment %}
 SCHEDULE
@@ -394,18 +390,17 @@ of code below the Schedule `<h2>` header below with
 {% elsif info.carpentry == "lc" %}
 {% include lc/schedule.html %}
 {% elsif info.carpentry == "ds" %}
-{% remote_include {{lesson_meta}}/schedule.md %}
+{% remote_include {{lesson_meta}}/schedule-surf.md %}
 {% elsif info.carpentry == "pilot" %}
 The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
 {% comment %}
 Edit/replace the text above if you want to include a schedule table.
-See the contents of the _includes/custom-schedule.html file for an example of
+See the contents of the_includes/custom-schedule.html file for an example of
 how one of these schedule tables is constructed.
 {% endcomment %}
 {% endif %}
 
 <hr/>
-
 
 {% comment %}
 SETUP
@@ -461,7 +456,7 @@ during the workshop.
 {% endcapture %}
 {% if content contains "/setup.md" %}
   {% capture setup %}
-  {% remote_include https://raw.githubusercontent.com/{{content | strip}} %}
+  {% remote_include <https://raw.githubusercontent.com/{{content> | strip}} %}
   {% endcapture %}
   {{ setup | split: "---" | last}}
 {% else %}
@@ -475,6 +470,7 @@ to obtain the software and data you will need to follow the lesson.
 
 {% comment %}
 For online workshops, the section below provides:
+
 - installation instructions for the Zoom client
 - recommendations for setting up Learners' workspace so they can follow along
   the instructions and the videoconferencing
@@ -486,4 +482,3 @@ to include the relevant installation instrucctions.
 {% if online != "false" %}
 {% include install_instructions/videoconferencing.html %}
 {% endif %}
-
