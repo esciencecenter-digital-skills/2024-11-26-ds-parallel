@@ -79,9 +79,9 @@ Read correct lesson meta from esciencecenter-digital-skills/workshop-metadata
 {% endcomment %}
 
 {% if info.flavor and info.flavor != 'NA' %}
-{% capture lesson_meta %}<https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}-{{info.flavor}}{%> endcapture %}
+{% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}-{{info.flavor}}{% endcapture %}
 {% else %}
-{% capture lesson_meta %}<https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{%> endcapture %}
+{% capture lesson_meta %}https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/{{info.curriculum}}{% endcapture %}
 {% endif %}
 
 {% comment %}
@@ -151,7 +151,7 @@ LOCATION
 
 This block displays the address and links to maps showing directions
 if the latitude and longitude of the workshop have been set.  You
-can use <https://itouchmap.com/latlong.html> to find the lat/long of an
+can use https://itouchmap.com/latlong.html to find the lat/long of an
 address.
 {% endcomment %}
 {% assign begin_address = info.address | slice: 0, 4 | downcase  %}
@@ -292,7 +292,7 @@ Edit the text to match who can attend the workshop. For instance:
 
 - This workshop is open to affiliates to ABC university.
 - This workshop is open to the public.
-- If you are interested in attending this workshop, contact <me@example.com>
+- If you are interested in attending this workshop, contact me@example.com
   for more information
 
 <p id="who-can-attend">
@@ -337,7 +337,7 @@ Collaborative Notes
 
 If you want to use an Etherpad, go to
 
-<https://pad.carpentries.org/YYYY-MM-DD-site>
+https://pad.carpentries.org/YYYY-MM-DD-site
 
 where 'YYYY-MM-DD-site' is the identifier for your workshop,
 e.g., '2015-06-10-esu'.
@@ -456,7 +456,7 @@ during the workshop.
 {% endcapture %}
 {% if content contains "/setup.md" %}
   {% capture setup %}
-  {% remote_include <https://raw.githubusercontent.com/{{content> | strip}} %}
+  {% remote_include https://raw.githubusercontent.com/{{content | strip}} %}
   {% endcapture %}
   {{ setup | split: "---" | last}}
 {% else %}
