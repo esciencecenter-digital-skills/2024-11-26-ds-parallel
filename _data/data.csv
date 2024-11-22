@@ -1,2 +1,2 @@
 venue,address,country,latitude,longitude,humandate,humantime,startdate,enddate,instructor,helper,carpentry,curriculum,title,slug,flavor
-NA,"Science Park 402, 1098 XH Amsterdam",NA,52.3566292,4.9568662,"november 26 - 27, 2024",9:30 - 17:00 CET,2024-11-25T23:00:00Z,2024-11-26T23:00:00Z,"Johan Hidding, Francesco Nattino, Benjamin Czaja, Maksim Masterov",,ds,ds-parallel,Parallel python together with SURF,2024-11-26-ds-parallel,NA
+"Netherlands eScience Center","Science Park 402, 1098 XH Amsterdam","Netherlands",52.3566292,4.9568662,"november 26 - 27, 2024",9:30 - 17:00 CET,2024-11-25T23:00:00Z,2024-11-26T23:00:00Z,"Johan Hidding, Francesco Nattino, Benjamin Czaja, Leon Oostrum",,ds,ds-parallel,Parallel python together with SURF,2024-11-26-ds-parallel,NA
